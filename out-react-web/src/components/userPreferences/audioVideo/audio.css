@@ -1,0 +1,44 @@
+.audio-controls {
+    margin: 12px auto;
+}
+label#demo-simple-select-label-audio {
+    top: 0px;
+}
+
+.MuiFormControl-root.MuiFormControl-fullWidth.w-50.css-q8hpuo-MuiFormControl-root [data-shrink="true"] {
+    top: 11px!important;
+}
+.MuiFormControl-root.MuiFormControl-fullWidth.w-50.css-q8hpuo-MuiFormControl-root .css-14lo706>span {
+    padding-left: 5px;
+    padding-right: 5px;
+    display: inline-block;
+    opacity: 0;
+    visibility: visible;
+    display: none;
+}
+p.hotk {
+    margin: 10px 0 0 0;
+}
+.cus-div {
+    padding: 18px 0 0 0;
+}
+.stop-capture {
+    display: block;
+    margin: 12px 0 0 0;
+}
+.start-capture {
+    margin: 12px 0 0 0;
+    display: block;
+}
+p.device-label {
+    margin: 10px 0 0 0;
+}
+.d-flex.mt-5 {
+    margin-top: 1rem!important;
+}
+.video-controls .live-player, .video-controls .recorded-player video{
+    width: 100%;
+    display: block;
+    margin: 17px 0;
+    object-fit: contain;
+}

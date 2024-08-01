@@ -1,0 +1,22 @@
+/* form invalid test style */
+.invalid-feedback {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+}
+
+/* date picker styles */
+.ne-datepicker-container {
+  position: relative;
+}
+.ne-datepicker-container .react-datepicker-wrapper {
+  width: 100%;
+}
+.ne-datepicker-container .datepicker-icon {
+  position: absolute;
+  top: 25%;
+  right: 3%;
+}
+.ne-datepicker-container.dark .react-datepicker__input-container input {
+  border: 1px solid #676767;
+}

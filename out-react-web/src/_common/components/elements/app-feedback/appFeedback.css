@@ -1,0 +1,68 @@
+.ws-app-feedback-container {
+  background: #D3CCE3;
+  background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);
+  background: linear-gradient(to right, #E9E4F0, #D3CCE3);
+  max-width: 400px;
+  border-radius: 10px;
+}
+.ws-app-feedback-container.info {
+
+}
+.ws-app-feedback-container.warning {
+
+}
+.ws-app-feedback-container.success {
+
+}
+.ws-app-feedback-container.error {
+
+}
+.ws-app-feedback-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 15px 0 15px;
+}
+.ws-app-feedback-icon {
+  font-size: 56px;
+  display: flex;
+}
+.ws-app-feedback-icon.info {
+  color: #2196F3;
+}
+.ws-app-feedback-icon.warning {
+  color: #FB8C00;
+}
+.ws-app-feedback-icon.success {
+  color: #43A047;
+}
+.ws-app-feedback-icon.error {
+  color: #E53935;
+}
+.ws-app-feedback-message {
+  min-height: calc(12vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 0;
+}
+.ws-app-feedback-btn-container {
+  padding: 15px;
+  border-top: 1px solid #a4a4a4;
+}
+.ws-app-feedback-btn {
+  background: rgba(0,0,0,0);
+  border: 0;
+  width: 100%;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+@media all and (max-width: 767px) {
+  .ws-app-feedback-container {
+    width: calc(80vw);
+  }
+}

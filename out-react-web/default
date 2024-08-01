@@ -1,0 +1,86 @@
+server {
+       server_name app.outrightalk.com;
+
+## Disable .htaccess and other hidden files
+location ~ /\.(?!well-known).* {
+    deny all;
+    access_log on;
+    log_not_found off;
+}
+
+client_max_body_size 50M;
+
+   add_header 'Access-Control-Allow-Origin' '*';
+   add_header 'Access-Control-Allow-Credentials' 'true';
+   add_header 'Access-Control-Allow-Headers' 'Authorization,Accept,Origin,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range';
+   add_header 'Access-Control-Allow-Methods' 'GET,POST,OPTIONS,PUT,DELETE,PATCH';
+##############################################
+fastcgi_buffers 8 16k;
+fastcgi_buffer_size 32k;
+fastcgi_connect_timeout 90s;
+fastcgi_send_timeout 90s;
+fastcgi_read_timeout 90s;
+proxy_read_timeout   90s;
+##############################################
+
+    location / {
+        proxy_pass http://localhost:3300;
+        client_max_body_size 50M;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-NginX-Proxy true;
+        proxy_redirect off;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+
+##############################################
+if ($request_method = 'OPTIONS') {
+        add_header 'Access-Control-Allow-Origin' '*';
+        #
+        # Om nom nom cookies
+        #
+        add_header 'Access-Control-Allow-Credentials' 'true';
+        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+        #
+        # Custom headers and headers various browsers *should* be OK with but aren't
+        #
+        add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type';
+        #
+        # Tell client that this pre-flight info is valid for 20 days
+        #
+        add_header 'Access-Control-Max-Age' 1728000;
+        add_header 'Content-Type' 'text/plain charset=UTF-8';
+        add_header 'Content-Length' 0;
+        return 204;
+     }
+     if ($request_method = 'POST') {
+        add_header 'Access-Control-Allow-Origin' '*';
+        add_header 'Access-Control-Allow-Credentials' 'true';
+        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+        add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type';
+     }
+     if ($request_method = 'GET') {
+        add_header 'Access-Control-Allow-Origin' '*';
+        add_header 'Access-Control-Allow-Credentials' 'true';
+        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+        add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type';
+     }
+}
+   # listen 443 ssl; # managed by Certbot
+   # ssl_certificate /etc/letsencrypt/live/app.outrightalk.com/fullchain.pem; # managed by Certbot
+   # ssl_certificate_key /etc/letsencrypt/live/app.outrightalk.com/privkey.pem; # managed by Certbot
+   # include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+   # ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+# server {
+   # if ($host = app.outrightalk.com) {
+     #   return 301 https://$host$request_uri;
+  # }  managed by Certbot
+
+#    server_name app.outrightalk.com;
+ #   listen 80;
+  #  return 404; # managed by Certbot
+#}

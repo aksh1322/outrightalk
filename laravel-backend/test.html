@@ -1,0 +1,195 @@
+
+<html>
+
+<head>
+    <title>Chat</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=MonteCarlo:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=MonteCarlo:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comic%20Sans%20MS:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open%20Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto%20Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gurmukhi:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@100..900&family=Noto+Sans+JP:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400..700&family=Noto+Sans+TC:wght@100..900&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+        @font-face {
+            font-family: "Poppins";
+            src: https: //fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap;
+                font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "MonteCarlo";
+            src: https: //fonts.googleapis.com/css2?family=MonteCarlo:wght@100;200;300;400;500;600;700;800;900&display=swap;
+                font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Poppins";
+            src: https: //fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap;
+                font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Poppins";
+            src: https: //fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;700;800;900&display=swap;
+                font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Poppins";
+            src: https: //fonts.googleapis.com/css2?family=Comic%20Sans%20MS:wght@100;200;300;400;500;600;700;800;900&display=swap;
+                font-weight: normal;
+            font-style: normal;
+        }
+
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #c2ccd9;
+            font-family: Noto Sans SC;
+            font-size: 16px !important;
+            font-weight: 500 !important;
+        }
+
+        .userImg {
+
+            align-items: center;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            background-color: #f2f2f2;
+            border-radius: 50%;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .chat {
+            width: 100%;
+        }
+
+        .chatMsg {
+            display: flex;
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+
+        .userImg img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .userInfo p {
+            margin: 0px;
+        }
+
+
+        .rightMsg p.userInfo>span.userName {
+            text-align: right;
+        }
+
+        p.userInfo>span.userName {
+            color: #fff;
+            font-weight: 700;
+            margin-left: 10px;
+        }
+
+
+
+        p.userMsg {
+            max-width: 500px;
+            padding: 12px 15px;
+            border-radius: 12px;
+            background: #fff;
+            margin-top: 5px !important;
+            box-shadow: 0px 0px 10px 0px #b9b9b9;
+            font-size: 17px;
+            font-weight: 400;
+        }
+
+
+
+        .leftMsg .userMsg {
+            border-top-left-radius: 0;
+        }
+
+        .leftMsg .sticker {
+            background: transparent;
+            box-shadow: none;
+        }
+
+
+
+        .rightMsg .userMsg {
+            border-top-right-radius: 0;
+        }
+
+        .chatMsg.rightMsg {
+            flex-direction: row-reverse;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="chat" id="createImg">
+        <div class="chatPanel"><br />
+            <div class="chatMsg leftMsg">
+                <!-- <p class="userInfo">
+                    <span class="userImg"><img
+                            src=https://outrightalk-backend.s3.amazonaws.com/assets/u/1656072115136157898.jpg></span><span
+                        class="userName">OutrighTalk</span>&nbsp;<span>14-June-2024 12:33 pm</span>
+                </p>
+                <p class="userMsg">how are you</p> -->
+                <div class="chatPanel"><br />
+                    <div style="text-align: center;">
+                        <p>Please respect everyone and do not use profane language</p>
+                    </div>
+                    <div style="text-align: center;">Brightness2 has just joined the room.</div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+</html>

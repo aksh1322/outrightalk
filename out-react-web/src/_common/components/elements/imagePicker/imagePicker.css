@@ -1,0 +1,39 @@
+/* profile image crop modal */
+.profile-image-modal-crop-area {
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  width: 100%;
+  position: relative;
+}
+
+.profile-image-modal-slider-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  margin-top: 15px;
+  flex-direction: column;
+}
+
+.profile-image-modal-slider {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.profile-image-modal-slider>p {
+  margin-bottom: 5px;
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+.profile-image-modal-bottom-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-image-modal-bottom-actions .btn {
+  min-width: 130px;
+}
